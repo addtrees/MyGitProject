@@ -3,12 +3,15 @@ include <string.h>
 
 int main(int agrc,char **agrv)
 {
-    char name[255];
+    char first[255], last[255];
 
     printf("Enter your name: ");
     fgets(name, 255, stdin);
-    name[strlen(name)-1] = '\0'; /* remove newline a the end */
+    first[strlen(first)-1] = '\0'; /* remove the new line at the end */
 
-    printf("Hello, %s!\n", name);
+    printf("Now enter your last name: ");
+    gets(last); /* buffer overflow? what's that? */
+
+    printf("Hello %s %s!\n", first, last);
     return 0;
 }
