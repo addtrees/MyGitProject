@@ -1,7 +1,14 @@
 include <stdio.h>
+include <string.h>
 
 int main(int agrc,char **agrv)
 {
-    printf("Hello WOrld!\n");
+    char name[255];
+
+    printf("Enter your name: ");
+    fgets(name, 255, stdin);
+    name[strlen(name)-1] = '\0'; /* remove newline a the end */
+
+    printf("Hello %s!\n", name);
     return 0;
 }
